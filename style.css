@@ -1,0 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+   
+    
+    
+}
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 0;
+    min-height: 100vh;
+    background:#5259d6 ;
+}
+.container{
+    display: flex;
+    max-width: 800px;
+    will-change: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    align-items: flex-end;
+    justify-content: center;
+    gap: 50px;
+}
+.container .hangman{
+    display: flex;
+    flex-direction: column;
+    padding: 0 20px;
+   max-width: 270px;
+}
+.container .hangman img{
+    width: 250px;
+    margin-top: 70px;
+}
+.container .hangman h1{
+    text-align: center;
+    font-size: 1.4rem;
+    margin-bottom: 30px;
+    margin-top: 30px;
+    text-transform: uppercase;
+
+}
+.word-display{
+    display: flex;
+    list-style: none;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.word-display .letter{
+    width: 28px;
+    margin-bottom: 40px;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 500;
+    text-align: center;
+    border-bottom: 3px solid #000;
+}
+.word-display .letter.guessed{
+     border-color: transparent;
+     margin: -40px 0 35px;
+
+}
+.text-side h4{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+.text-side h4  b{
+   font-weight: 600;
+}
+.text-side .incorrect-guess  b{
+    color: red;
+    
+}
+.text-side .keybord{
+    display: flex;
+    gap: 5px ;
+    flex-wrap: wrap;
+    padding: 30px;
+    justify-content: center;
+}
+.keybord button{
+    cursor: pointer;
+    color: white;
+    font-weight: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px ;
+    border: none;
+    outline: none;
+    background: #5259d6;
+    border-radius: 4px;
+    width: calc(100% / 9 - 5px);
+
+}
+.keybord button[disabled]{
+   opacity: 0.6;
+   pointer-events: none;
+}
+.keybord button:hover{
+    background: #9ba0f3;
+}
+.game-model{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    display: flex;
+    opacity: 0;
+    z-index: 999;
+    pointer-events: none;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    transition: opacity 0.4s ease;
+}
+.game-model.show{
+    opacity: 1;
+    pointer-events: auto;
+}
+.game-model .content{
+    max-width: 460px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    padding: 30px;
+    background-color: #fff;
+
+}
+.game-model .content img{
+   width: 130px;
+    margin-bottom: 20px;
+}
+.game-model .content h4{
+    font-size: 1.5rem;
+}
+.game-model .content p{
+    font-size: 20px;
+    margin-top: 10px;
+}
+.game-model .content p b{
+    color: #4b53f3;
+}
+.play-again{
+    cursor: pointer;
+    color: white;
+    font-weight: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 7px ;
+    border: none;
+    outline: none;
+    background: #5259d6;
+    border-radius: 4px;
+}
+.play-again:hover{
+    background: #6b6eac;
+}
+.game-model button{
+    padding: 10px 20px;
+    margin-top: 20px;
+}
+@media (max-width : 755px) {
+    .container{
+        flex-direction: column;
+        padding: 30px 15px;
+        align-items: center;
+    }
+    .container .hangman img{
+        max-width: 200px;
+        margin-top: 0;
+    }
+    .hangman h1{
+        display: none;
+    }
+    .text-side h4{
+        margin-bottom: 2px;
+    }
+}
